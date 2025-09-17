@@ -40,7 +40,7 @@ target "_slurm" {
     "org.opencontainers.image.license" = "GPL-2.0-or-later WITH openssl-exception"
     "org.opencontainers.image.vendor" = "SchedMD LLC."
     "org.opencontainers.image.version" = "${slurm_version}"
-    "org.opencontainers.image.source" = "https://github.com/SlinkyProject/containers"
+    "org.opencontainers.image.source" = "https://github.com/jamesbeedy/containers"
     # Ref: https://docs.redhat.com/en/documentation/red_hat_software_certification/2025/html/red_hat_openshift_software_certification_policy_guide/assembly-requirements-for-container-images_openshift-sw-cert-policy-introduction#con-image-metadata-requirements_openshift-sw-cert-policy-container-images
     "vendor" = "SchedMD LLC."
     "version" = "${slurm_version}"

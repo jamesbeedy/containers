@@ -339,6 +339,20 @@ authselect select sssd with-mkhomedir --force
 rm -f /etc/ssh/ssh_host_*
 EOR
 
+RUN <<EOR
+# Install Packages
+set -xeuo pipefail
+apt-get -qq update
+apt-get -qq -y install --no-install-recommends git python3.12-venv python3.12-dev python3-pip
+apt-get clean && rm -rf /var/lib/apt/lists/*
+
+git clone https://github.com/jamesbeedy/jobbergate.git -b envfile_fixup --single-branch /srv/jobbergate
+python3 -m venv /srv/jobbergate-agent-venv --system-site-packages --symlinks && \
+  source /srv/jobbergate-agent-venv/bin/activate && \
+  pip install --no-cache-dir --upgrade pip setuptools wheel && \
+  pip install --no-cache-dir /srv/jobbergate/jobbergate-agent
+EOR
+
 COPY files/login/etc/supervisor/* /etc/supervisor/
 COPY files/login/usr/local/bin/* /usr/local/bin/
 

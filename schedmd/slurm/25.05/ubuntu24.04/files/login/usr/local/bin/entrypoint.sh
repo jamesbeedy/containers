@@ -10,6 +10,8 @@ export SACKD_OPTIONS="${SACKD_OPTIONS:-""}"
 export SSSD_OPTIONS="${SSSD_OPTIONS:-""}"
 export ODDJOB_OPTIONS="${ODDJOB_OPTIONS:-""}"
 export DBUS_OPTIONS="${DBUS_OPTIONS:-""}"
+export JOBBERGATE_AGENT_OPTIONS="${JOBBERGATE_AGENT_OPTIONS:-""}"
+export VANTAGE_AGENT_OPTIONS="${VANTAGE_AGENT_OPTIONS:-""}"
 
 function main() {
 	mkdir -p /run/sshd/

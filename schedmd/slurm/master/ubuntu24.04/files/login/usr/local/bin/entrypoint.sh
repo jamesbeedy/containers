@@ -11,6 +11,9 @@ export SSSD_OPTIONS="${SSSD_OPTIONS:-""}"
 export ODDJOB_OPTIONS="${ODDJOB_OPTIONS:-""}"
 export DBUS_OPTIONS="${DBUS_OPTIONS:-""}"
 
+export JOBBERGATE_AGENT_OIDC_CLIENT_ID = "${JOBBERGATE_AGENT_OIDC_CLIENT_ID:-""}"
+export JOBBERGATE_AGENT_OIDC_CLIENT_SECRET = "${JOBBERGATE_AGENT_OIDC_CLIENT_SECRET:-""}"
+
 function main() {
 	mkdir -p /run/sshd/
 	chmod 0755 /run/sshd/
@@ -20,6 +23,6 @@ function main() {
 
 	ssh-keygen -A
 
-	exec supervisord -c /etc/supervisor/supervisord.conf
+	#exec supervisord -c /etc/supervisor/supervisord.conf
 }
 main

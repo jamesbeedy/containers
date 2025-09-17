@@ -360,4 +360,3 @@ COPY files/login/etc/supervisor/* /etc/supervisor/
 COPY files/login/usr/local/bin/* /usr/local/bin/
 
 EXPOSE 22/tcp
-ENTRYPOINT ["entrypoint.sh"]
